@@ -31,3 +31,12 @@
 /Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.pdb
 /Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.genruntimeconfig.cache
 /Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/obj/Debug/net10.0/ref/StudentImportDemo.dll
+/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.sourcelink.json
+/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/bin/Debug/net10.0/ClosedXML.dll
+/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/bin/Debug/net10.0/ClosedXML.Parser.dll
+/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/bin/Debug/net10.0/DocumentFormat.OpenXml.dll
+/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/bin/Debug/net10.0/DocumentFormat.OpenXml.Framework.dll
+/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/bin/Debug/net10.0/ExcelNumberFormat.dll
+/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/bin/Debug/net10.0/RBush.dll
+/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/bin/Debug/net10.0/SixLabors.Fonts.dll
+/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/bin/Debug/net10.0/System.IO.Packaging.dll

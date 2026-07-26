@@ -1,11 +1,17 @@
+using StudentImportDemo.Services;
+using StudentImportDemo.Services.Impl;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddControllers();
+builder.Services.AddScoped<IImport, ImportImpl>();
+
 
 var app = builder.Build();
-
+app.MapControllers();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -35,29 +41,11 @@ app.MapGet("/weatherforecast", () =>
 // edge case
 // Client gọi API nhưng không gửi file.
 // File empty
-app.MapPost("/api/students/import", (IFormFile? file) =>
-{
-    if (file == null)
-    {
-        return Results.BadRequest(new
-        {
-            message = "File is required"
-        });
-    }
+// File xlsx khong hop le
+// xlsx khong dung sheet
+// xlsx khong dung header
+// xlsx co header nhung khong co value
 
-    if (file.Length == 0)
-    {
-        return Results.BadRequest(new
-        {
-            message = "File cannot be empty"
-        });
-    }
-    return Results.Ok(new
-    {
-        fileName = file?.FileName,
-        size = file?.Length,
-    });
-}).DisableAntiforgery();
 
 app.Run();
 

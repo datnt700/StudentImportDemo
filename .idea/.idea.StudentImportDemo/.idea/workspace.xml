@@ -8,7 +8,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd407e45-8ec2-4d20-a54d-a21e3e93cbe6" name="Changes" comment="" />
+    <list default="true" id="fd407e45-8ec2-4d20-a54d-a21e3e93cbe6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/StudentImportDemo.Tests/Services/StudentExcelReaderTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StudentImportDemo/Controllers/ImportController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StudentImportDemo/Model/StudentExcelReadResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StudentImportDemo/Model/StudentImportRow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StudentImportDemo/Services/IImport.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StudentImportDemo/Services/Impl/ImportImpl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudentImportDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudentImportDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo.sln" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/StudentImportDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/StudentImportDemo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/bin/Debug/net10.0/StudentImportDemo.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/bin/Debug/net10.0/StudentImportDemo.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/bin/Debug/net10.0/StudentImportDemo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/bin/Debug/net10.0/StudentImportDemo.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/bin/Debug/net10.0/StudentImportDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/bin/Debug/net10.0/StudentImportDemo.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/StudentImportDemo.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/ref/StudentImportDemo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/ref/StudentImportDemo.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/refint/StudentImportDemo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/refint/StudentImportDemo.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/rjsmrazor.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/rjsmrazor.dswa.cache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/rpswa.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/Debug/net10.0/rpswa.dswa.cache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/StudentImportDemo.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/StudentImportDemo.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentImportDemo/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/StudentImportDemo/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,9 +50,25 @@
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;datnt700&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/datnt700/StudentImportDemo.git&quot;,
+    &quot;accountId&quot;: &quot;f2c45997-b9f5-4f8c-93bd-dea804fd28c9&quot;
+  }
+}</component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="3GrztPqto9lkHx8MnRbKbBA2zvV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,11 +78,14 @@
   "keyToString": {
     ".NET Launch Settings Profile.StudentImportDemo: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -78,12 +130,18 @@
       <option name="presentableId" value="Default" />
       <updated>1784744689399</updated>
       <workItem from="1784744690447" duration="2733000" />
+      <workItem from="1784782699371" duration="69000" />
+      <workItem from="1784986231206" duration="6015000" />
+      <workItem from="1785052473832" duration="1380000" />
+      <workItem from="1785055620245" duration="178000" />
+      <workItem from="1785055810174" duration="5132000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
