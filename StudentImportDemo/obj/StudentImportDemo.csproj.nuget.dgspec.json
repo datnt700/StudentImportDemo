@@ -1,25 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/StudentImportDemo.csproj": {}
+    "C:\\Datbeo\\projet\\StudentImportDemo\\StudentImportDemo\\StudentImportDemo.csproj": {}
   },
   "projects": {
-    "/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/StudentImportDemo.csproj": {
+    "C:\\Datbeo\\projet\\StudentImportDemo\\StudentImportDemo\\StudentImportDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/StudentImportDemo.csproj",
+        "projectUniqueName": "C:\\Datbeo\\projet\\StudentImportDemo\\StudentImportDemo\\StudentImportDemo.csproj",
         "projectName": "StudentImportDemo",
-        "projectPath": "/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/StudentImportDemo.csproj",
-        "packagesPath": "/Users/user/.nuget/packages/",
-        "outputPath": "/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/obj/",
+        "projectPath": "C:\\Datbeo\\projet\\StudentImportDemo\\StudentImportDemo\\StudentImportDemo.csproj",
+        "packagesPath": "C:\\Users\\dev.capron\\.nuget\\packages\\",
+        "outputPath": "C:\\Datbeo\\projet\\StudentImportDemo\\StudentImportDemo\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/user/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\dev.capron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\devDept\\Eyeshot 2026\\NuGet Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.302/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

@@ -4,5 +4,5 @@ namespace StudentImportDemo.Services;
 
 public interface IImport
 {
-    StudentExcelReadResult Read(Stream steam);
+    ExcelReadResult<StudentImportRow> Read(Stream steam);
 }

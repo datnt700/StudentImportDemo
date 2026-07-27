@@ -23,23 +23,8 @@ public class ImportController : Controller
         _import = import;
     }
     [HttpPost("import")]
-    public IActionResult Import([FromForm] IFormFile? file)
+    public IActionResult Import([FromForm] IFormFile file)
     {
-        if (file == null)
-        {
-            return BadRequest(new
-            {
-                message = "File is required"
-            });
-        }
-
-        if (file.Length == 0)
-        {
-            return BadRequest(new
-            {
-                message = "File cannot be empty"
-            });
-        }
         var stream = file.OpenReadStream();
         var studentData = _import.Read(stream);
         return Ok(studentData);
