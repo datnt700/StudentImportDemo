@@ -1,4 +1,5 @@
-﻿using StudentImportDemo.Model;
+﻿using ClosedXML.Excel;
+using StudentImportDemo.Model;
 
 namespace StudentImportDemo.Services.Excel
 {
@@ -28,6 +29,23 @@ namespace StudentImportDemo.Services.Excel
                 dateOfBirth,
                 classCode
             );
+        }
+        
+        public IReadOnlyList<StudentImportRow> MapRows(
+            int startRow,
+            int endRow,
+            IXLWorksheet worksheet)
+        {
+            var rows = new List<StudentImportRow>();
+
+            for (var rowNumber = startRow;
+                 rowNumber <= endRow;
+                 rowNumber++)
+            {
+                rows.Add(MapRow(rowNumber, worksheet));
+            }
+
+            return rows;
         }
     }
 }

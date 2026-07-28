@@ -1,28 +1,28 @@
 {
   "version": 2,
-  "dgSpecHash": "qgrMLRHIKjM=",
+  "dgSpecHash": "M15FHyJ+W+Y=",
   "success": true,
-  "projectFilePath": "C:\\Datbeo\\projet\\StudentImportDemo\\StudentImportDemo\\StudentImportDemo.csproj",
+  "projectFilePath": "/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/StudentImportDemo.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dev.capron\\.nuget\\packages\\closedxml\\0.105.1\\closedxml.0.105.1.nupkg.sha512",
-    "C:\\Users\\dev.capron\\.nuget\\packages\\closedxml.parser\\2.0.0\\closedxml.parser.2.0.0.nupkg.sha512",
-    "C:\\Users\\dev.capron\\.nuget\\packages\\documentformat.openxml\\3.1.1\\documentformat.openxml.3.1.1.nupkg.sha512",
-    "C:\\Users\\dev.capron\\.nuget\\packages\\documentformat.openxml.framework\\3.1.1\\documentformat.openxml.framework.3.1.1.nupkg.sha512",
-    "C:\\Users\\dev.capron\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
-    "C:\\Users\\dev.capron\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.10\\microsoft.aspnetcore.openapi.10.0.10.nupkg.sha512",
-    "C:\\Users\\dev.capron\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
-    "C:\\Users\\dev.capron\\.nuget\\packages\\rbush.signed\\4.0.0\\rbush.signed.4.0.0.nupkg.sha512",
-    "C:\\Users\\dev.capron\\.nuget\\packages\\sixlabors.fonts\\1.0.0\\sixlabors.fonts.1.0.0.nupkg.sha512",
-    "C:\\Users\\dev.capron\\.nuget\\packages\\system.io.packaging\\8.0.1\\system.io.packaging.8.0.1.nupkg.sha512"
+    "/Users/user/.nuget/packages/closedxml/0.105.1/closedxml.0.105.1.nupkg.sha512",
+    "/Users/user/.nuget/packages/closedxml.parser/2.0.0/closedxml.parser.2.0.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/documentformat.openxml/3.1.1/documentformat.openxml.3.1.1.nupkg.sha512",
+    "/Users/user/.nuget/packages/documentformat.openxml.framework/3.1.1/documentformat.openxml.framework.3.1.1.nupkg.sha512",
+    "/Users/user/.nuget/packages/excelnumberformat/1.1.0/excelnumberformat.1.1.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/microsoft.aspnetcore.openapi/10.0.10/microsoft.aspnetcore.openapi.10.0.10.nupkg.sha512",
+    "/Users/user/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/rbush.signed/4.0.0/rbush.signed.4.0.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/sixlabors.fonts/1.0.0/sixlabors.fonts.1.0.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/system.io.packaging/8.0.1/system.io.packaging.8.0.1.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1903",
       "level": "Warning",
       "message": "Le package 'Microsoft.OpenApi' 2.0.0 présente une vulnérabilité de gravité élevé(e) connue, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc.",
-      "projectPath": "C:\\Datbeo\\projet\\StudentImportDemo\\StudentImportDemo\\StudentImportDemo.csproj",
+      "projectPath": "/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/StudentImportDemo.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Datbeo\\projet\\StudentImportDemo\\StudentImportDemo\\StudentImportDemo.csproj",
+      "filePath": "/Users/user/Desktop/Projet/StudentImportDemo/StudentImportDemo/StudentImportDemo.csproj",
       "libraryId": "Microsoft.OpenApi",
       "targetGraphs": [
         "net10.0"

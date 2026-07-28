@@ -6,6 +6,9 @@ namespace StudentImportDemo.Services.Excel
     {
         string SheetName { get; }
         IReadOnlyList<string> Header { get; }
-        T MapRow(int rowNumber, IXLWorksheet worksheet);
+        IReadOnlyList<T> MapRows(
+            int startRow,
+            int endRow,
+            IXLWorksheet worksheet);
     }
 }

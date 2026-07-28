@@ -39,13 +39,21 @@ public class ExcelImportReader<T> : IExcelImportReader<T>
                 "Data is empty.",
                 Array.Empty<T>());
         }
-
-        var items = new List<T>();
-        for (var rowNumber = 2; rowNumber <= lastRow.RowNumber(); rowNumber++)
+        int lastRowNumber = firstSheet.LastRowUsed().RowNumber();
+        int mapSize = 100;
+        int startRow = 2;
+        List<T> items = [];
+        while (startRow <= lastRowNumber)
         {
-            items.Add(definition.MapRow(rowNumber, firstSheet));
+            int endRow = Math.Min(startRow + mapSize - 1, lastRowNumber);
+            var batch = definition.MapRows(
+                startRow,
+                endRow,
+                firstSheet);
+            startRow = endRow + 1;
+            
+            items.AddRange(batch);
         }
-
         return new ExcelReadResult<T>(
             true,
             "File Import Successful",
