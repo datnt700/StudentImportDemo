@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using StudentImportDemo.Data;
 using StudentImportDemo.Middleware;
 using StudentImportDemo.Model;
 using StudentImportDemo.Services;
@@ -6,25 +8,20 @@ using StudentImportDemo.Services.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
 
 builder.Services.AddControllers();
-builder.Services.AddScoped<IImport, ImportImpl>();
+builder.Services.AddScoped<IStudentImport, StudentImportImpl>();
 builder.Services.AddScoped(typeof(IExcelImportReader<>), typeof(ExcelImportReader<>));
 builder.Services.AddScoped<IExcelImportDefinition<StudentImportRow>, StudentImportDefinition>();
 
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
 var app = builder.Build();
 
 app.UseMiddleware<StudentImportFileValidationMiddleware>();
 
 app.MapControllers();
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
 
 app.UseHttpsRedirection();
 
