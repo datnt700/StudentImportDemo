@@ -3,7 +3,7 @@ using StudentImportDemo.Model;
 
 namespace StudentImportDemo.Services.Excel;
 
-public class ExcelImportReader<T> : IExcelImportReader<T>
+public class ExcelImportReader<T> : IExcelImportReader<T> where T : class
 {
     public Task<IEnumerable<ExcelReadResult<T>>> Read(Stream stream, IExcelImportDefinition<T> definition)
     {

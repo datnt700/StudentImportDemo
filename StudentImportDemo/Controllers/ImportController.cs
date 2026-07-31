@@ -1,32 +1,116 @@
-using DocumentFormat.OpenXml.Office2010.Word;
-using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore.Mvc;
-using StudentImportDemo.Services;
+using Microsoft.EntityFrameworkCore;
+using StudentImportDemo.Data;
+using StudentImportDemo.Entity;
+using StudentImportDemo.Services.Background;
 
 namespace StudentImportDemo.Controllers;
 
-[ApiController]
-[Route("api/students")]
 public class ImportController : Controller
 {
-    private readonly IStudentImport _import;
-    // Validate cho vao middleware
-    // lam dynamic cai ham len co the ap dung OCP trong solid, co the tai su dung ham Read
-    // Lam sao check neu co loi tren tung Row, tra ve mot cai status group
-    // neu ma file lon thi sao 1 trieu row
-    // co cach nao chay nhieu buck nho thay vi chay tung row
-    // case khach hang import bi time out roi khach hang import lai thi sao
-    // lam sao khi luu xuong database thi kiem tra de biet co trong database hay chua    
-    // Doc lai N-layer va DDD de sap xep lai cau truc file code
-    public ImportController(IStudentImport import)
+    private readonly AppDbContext _db;
+    private readonly IWebHostEnvironment _environment;
+    private readonly IStudentImportJobQueue _queue;
+
+    public ImportController(
+        AppDbContext db,
+        IWebHostEnvironment environment,
+        IStudentImportJobQueue queue)
     {
-        _import = import;
+        _db = db;
+        _environment = environment;
+        _queue = queue;
     }
-    [HttpPost("import")]
-    public async Task<IActionResult> Import([FromForm] IFormFile file)
+
+    [HttpGet("")]
+    [HttpGet("import")]
+    public IActionResult Index()
     {
-        var stream = file.OpenReadStream();
-        var studentData = await _import.Read(stream);
-        return Ok(studentData);
+        return View();
+    }
+
+    [HttpGet("api/import-jobs/{importId}")]
+    public async Task<IActionResult> GetImportJob(string importId)
+    {
+        var job = await _db.ImportJobs
+            .Include(x => x.RowResults)
+            .FirstOrDefaultAsync(x => x.Id == importId);
+
+        if (job == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(new
+        {
+            job.Id,
+            job.FileName,
+            job.Status,
+            job.SuccessCount,
+            job.FailedCount,
+            rows = job.RowResults
+                .OrderBy(x => x.RowNumber)
+                .Select(x => new
+                {
+                    x.RowNumber,
+                    x.StudentCode,
+                    x.FullName,
+                    x.Status,
+                    x.Message
+                })
+        });
+    }
+
+    [HttpPost("api/students/import")]
+    public async Task<IActionResult> Import([FromForm] IFormFile file, [FromForm] string importId)
+    {
+        var existingJob = await _db.ImportJobs.AnyAsync(job => job.Id == importId);
+        if (existingJob)
+        {
+            return Conflict(new
+            {
+                message = "An import job with this importId already exists. Create a new importId for a new import."
+            });
+        }
+
+        var importDirectory = Path.Combine(_environment.ContentRootPath, "uploads", "imports");
+        Directory.CreateDirectory(importDirectory);
+
+        var storedFileName = importId + Path.GetExtension(file.FileName);
+        var absoluteStoredPath = Path.Combine(importDirectory, storedFileName);
+        var relativeStoredPath = Path.Combine("uploads", "imports", storedFileName);
+
+        await using (var stream = System.IO.File.Create(absoluteStoredPath))
+        {
+            await file.CopyToAsync(stream);
+        }
+
+        _db.ImportJobs.Add(new ImportJob
+        {
+            Id = importId,
+            FileName = file.FileName,
+            StoredFilePath = relativeStoredPath,
+            Status = "Pending",
+            SuccessCount = 0,
+            FailedCount = 0,
+            CreatedAt = DateTime.UtcNow
+        });
+        try
+        {
+           await _db.SaveChangesAsync();
+        }
+        catch(DbUpdateException ex)
+        {
+            Console.WriteLine("Error", ex);
+        }
+        _queue.Enqueue(importId);
+
+        return Ok(new
+        {
+            importId,
+            status = "Pending",
+            fileName = file.FileName,
+            message = "Import job created. Processing will continue in the background."
+        });
     }
 }

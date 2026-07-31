@@ -1,29 +1,36 @@
 using Microsoft.EntityFrameworkCore;
+using StudentImportDemo;
 using StudentImportDemo.Data;
 using StudentImportDemo.Middleware;
 using StudentImportDemo.Model;
 using StudentImportDemo.Services;
+using StudentImportDemo.Services.Background;
 using StudentImportDemo.Services.Excel;
 using StudentImportDemo.Services.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IStudentImport, StudentImportImpl>();
 builder.Services.AddScoped(typeof(IExcelImportReader<>), typeof(ExcelImportReader<>));
 builder.Services.AddScoped<IExcelImportDefinition<StudentImportRow>, StudentImportDefinition>();
-
+builder.Services.AddSignalR();
+builder.Services.AddSingleton<IStudentImportJobQueue, StudentImportJobQueue>();
+builder.Services.AddHostedService<StudentImportBackgroundService>();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")));
+
 var app = builder.Build();
 
+app.UseHttpsRedirection();
 app.UseMiddleware<StudentImportFileValidationMiddleware>();
 
+app.MapHub<ImportHub>("/hubs/import");
 app.MapControllers();
-
-app.UseHttpsRedirection();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Import}/{action=Index}/{id?}");
 
 var summaries = new[]
 {
@@ -32,7 +39,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
+    var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
@@ -43,14 +50,6 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast");
-// edge case
-// Client gọi API nhưng không gửi file.
-// File empty
-// File xlsx khong hop le
-// xlsx khong dung sheet
-// xlsx khong dung header
-// xlsx co header nhung khong co value
-
 
 app.Run();
 
@@ -58,4 +57,3 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
-
